@@ -22,7 +22,7 @@ const NavBar = () => {
 
             <h2 className="text-sm mx-auto w-[300px]  md:ml-[1%] md:w-full md:text-base">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-              <span className="font-bold hover:underline cursor-pointer pl-2 block md:inline">
+              <span className="font-bold hover:underline  cursor-pointer pl-2 block md:inline">
                 ShopNow
               </span>
             </h2>
@@ -55,10 +55,10 @@ const NavBar = () => {
 
             {/* NAV LINKS (Desktop Only) */}
             <div className="hidden lg:flex gap-10 text-lg font-medium">
-              <a href="#" className="hover:underline duration-200">Home</a>
-              <a href="#" className="hover:underline duration-200">About</a>
-              <a href="#" className="hover:underline duration-200">Services</a>
-              <a href="#" className="hover:underline duration-200">Contact</a>
+              <a href="#" className="hover:underline underline-offset-5 duration-200">Home</a>
+              <a href="#" className="hover:underline underline-offset-5 duration-200">About</a>
+              <a href="#" className="hover:underline underline-offset-5 duration-200">Services</a>
+              <a href="#" className="hover:underline underline-offset-5 duration-200">Contact</a>
             </div>
 
             {/* SEARCH (Hidden on mobile) */}
@@ -90,7 +90,7 @@ const NavBar = () => {
                   className="text-2xl p-2 rounded-full  hover:bg-red-300"
                   onClick={() => setOpen(!open)}
                 >
-                  <CiUser />
+                  <CiUser className='font-bold'/>
                 </button>
 
                 {open && (
