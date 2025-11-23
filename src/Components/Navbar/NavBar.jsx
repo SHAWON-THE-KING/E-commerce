@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/logo.png'
 import { IoIosSearch } from "react-icons/io";
 import { CiUser } from "react-icons/ci";
 import { MdLocalMall } from "react-icons/md";
