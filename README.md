@@ -1,3 +1,2 @@
 # LIVE LINK
-https://imaginative-bublanina-86a775.netlify.app/
-
+https://e-commerce-one-omega-43.vercel.app/
