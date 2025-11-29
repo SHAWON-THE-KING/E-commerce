@@ -8,17 +8,17 @@ const Categories = () => {
             <div className="container pt-20">
                 <Section section="Categories" />
 
-                <div className="flex flex-col sm:flex-row items-center md:gap-24 sm:gap-6">
-                    <h2 className="text-2xl mt-7 sm:text-3xl md:text-4xl font-bold text-gray-900 relative">
+                <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 md:gap-24">
+                    <h2 className="text-xl mt-4 sm:mt-7 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
                         Browse By Category
                     </h2>
                 </div>
-                <div>
+
+                <div className="mt-6">
                     <CategoriesSlider />
                 </div>
 
-                
-                <div className=' border border-gray-300 w-full'></div>
+                <div className="h-px bg-gray-200 w-full mt-8 "></div>
 
             </div>
         </>

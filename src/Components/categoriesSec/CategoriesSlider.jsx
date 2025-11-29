@@ -3,10 +3,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import { FiSmartphone, FiMonitor, FiWatch, FiCamera, FiHeadphones } from "react-icons/fi";
+import {
+    FiSmartphone,
+    FiMonitor,
+    FiWatch,
+    FiCamera,
+    FiHeadphones
+} from "react-icons/fi";
 import { PiGameControllerThin } from "react-icons/pi";
 import CategoryCard from "./CategoryCard";
-
 
 function CategoriesSlider() {
     const sliderRef = useRef(null);
@@ -20,175 +25,123 @@ function CategoriesSlider() {
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1280, // xl & above
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 1024, // lg
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 768, // md
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 480, // sm (phones)
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: true,
-                    centerPadding: '0px'
+                    centerPadding: "0px"
                 }
             }
         ]
     };
 
-    // Custom Arrow Button Component (inline)
     const ArrowButton = ({ direction, onClick }) => (
         <button
             onClick={onClick}
-            className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-white border border-gray-300 
-                 flex items-center justify-center hover:bg-gray-100 transition-all duration-100
-                 shadow-sm hover:shadow-md cursor-pointer"
+            className="
+                h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 
+                rounded-full bg-white border border-gray-300 
+                flex items-center justify-center 
+                hover:bg-gray-100 transition-all duration-150
+                shadow-sm hover:shadow-md cursor-pointer
+            "
         >
             {direction === "left" ? (
-                <FaArrowLeftLong className="text-black text-center text-lg md:text-xl" />
+                <FaArrowLeftLong className="text-black text-base sm:text-lg md:text-xl" />
             ) : (
-                <FaArrowRightLong className="text-black text-center text-lg md:text-xl" />
+                <FaArrowRightLong className="text-black text-base sm:text-lg md:text-xl" />
             )}
         </button>
     );
 
     return (
-        <div className="relative my-16">
-            <div className="absolute top-5 right-[38%] z-10 sm:-top-16 md:-top-25 sm:right-4 md:right-10">
-                {/* Custom Arrow Buttons */}
-                <div className="flex gap-2 items-center md:gap-3">
-                    <ArrowButton
-                        direction="left"
-                        onClick={() => sliderRef.current?.slickPrev()}
-                    />
-                    <ArrowButton
-                        direction="right"
-                        onClick={() => sliderRef.current?.slickNext()}
-                    />
-                </div>
+        <div className="relative my-10 sm:my-14 md:my-16 lg:my-20 container mx-auto px-4">
+            {/* Arrow Buttons */}
+            <div className="
+                        absolute 
+                        top-3 right-1
+                        sm:top-0 sm:right-4 
+                        md:-top-25 md:right-10 
+                        flex gap-2 items-center z-10
+                        hidden lg:flex
+                    ">
+                <ArrowButton direction="left" onClick={() => sliderRef.current?.slickPrev()} />
+                <ArrowButton direction="right" onClick={() => sliderRef.current?.slickNext()} />
             </div>
 
+            {/* Mobile & Tablet Arrows (mid-bottom) */}
+            <div
+                    className="
+                    absolute 
+                    -bottom-9 left-1/2 
+                    -translate-x-1/2
+                    flex gap-3 items-center z-10
+                    lg:hidden
+                "
+            >
+                <ArrowButton direction="left" onClick={() => sliderRef.current?.slickPrev()} />
+                <ArrowButton direction="right" onClick={() => sliderRef.current?.slickNext()} />
+            </div>
+
+
+
+
             {/* Slider */}
-            <div className="slider-container flex justify-center">
-                <div className="w-full max-w-full">
-                    <Slider ref={sliderRef} {...settings}>
-
-                        {/* Product 1 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiSmartphone size={32} />} label="Phones" />
+            <div className="slider-container">
+                <Slider ref={sliderRef} {...settings}>
+                    {[
+                        { icon: <FiSmartphone size={32} />, label: "Phones" },
+                        { icon: <FiMonitor size={32} />, label: "Computers" },
+                        { icon: <FiWatch size={32} />, label: "SmartWatch" },
+                        { icon: <FiCamera size={32} />, label: "Camera" },
+                        { icon: <FiHeadphones size={32} />, label: "HeadPhones" },
+                        { icon: <PiGameControllerThin size={32} />, label: "Gaming" },
+                        // Duplicate for loop effect
+                        { icon: <FiSmartphone size={32} />, label: "Phones" },
+                        { icon: <FiMonitor size={32} />, label: "Computers" },
+                        { icon: <FiWatch size={32} />, label: "SmartWatch" },
+                        { icon: <FiCamera size={32} />, label: "Camera" },
+                        { icon: <FiHeadphones size={32} />, label: "HeadPhones" },
+                        { icon: <PiGameControllerThin size={32} />, label: "Gaming" }
+                    ].map((item, index) => (
+                        <div key={index} className="px-2 flex justify-center">
+                            <div className="w-full max-w-[160px] sm:max-w-xs md:max-w-sm lg:max-w-md">
+                                <CategoryCard icon={item.icon} label={item.label} />
                             </div>
                         </div>
-
-                        {/* Product 2 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiMonitor size={32} />} label="Computers" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 3 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                
-                                <CategoryCard icon={<FiWatch size={32} />} label="SmartWatch" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 4 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiCamera size={32} />} label="Camera" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 5 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiHeadphones size={32} />} label="HeadPhones" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 6 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<PiGameControllerThin size={32} />} label="Gaming" />
-
-                            </div>
-                        </div>
-                        
-                        {/* Product 1 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiSmartphone size={32} />} label="Phones" />
-                            </div>
-                        </div>
-
-                        {/* Product 2 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiMonitor size={32} />} label="Computers" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 3 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiWatch size={32} />} label="SmartWatch" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 4 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiCamera size={32} />} label="Camera" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 5 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<FiHeadphones size={32} />} label="HeadPhones" />
-
-                            </div>
-                        </div>
-
-                        {/* Product 6 */}
-                        <div className="px-2 flex justify-center">
-                            <div className="w-full max-w-xs">
-                                <CategoryCard icon={<PiGameControllerThin size={32} />} label="Gaming" />
-
-                            </div>
-                        </div>
-
-
-                    </Slider>
-                </div>
+                    ))}
+                </Slider>
             </div>
 
             <style>{`
-        .flash-sales-slider-wrapper .slick-slide {
-          display: flex !important;
-          justify-content: center !important;
-          align-items: center !important;
-        }
-      `}</style>
+                .slick-slide {
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                }
+            `}</style>
         </div>
     );
 }
