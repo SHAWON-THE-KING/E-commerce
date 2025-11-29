@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from './Components/Navbar/NavBar'
 import Banner from './Components/Banner/Banner'
 import FlashSales from './Components/Flash-Sales/FlashSales'
-import Categories from './Components/categories/Categories'
+import Categories from './Components/categoriesSec/Categories'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <NavBar />
     <Banner />
     <FlashSales />
-    <Categories/>
+    <Categories />
     </>
   )
 }

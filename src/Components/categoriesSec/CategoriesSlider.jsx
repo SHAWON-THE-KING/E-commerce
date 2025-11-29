@@ -100,6 +100,7 @@ function CategoriesSlider() {
                         {/* Product 3 */}
                         <div className="px-2 flex justify-center">
                             <div className="w-full max-w-xs">
+                                
                                 <CategoryCard icon={<FiWatch size={32} />} label="SmartWatch" />
 
                             </div>

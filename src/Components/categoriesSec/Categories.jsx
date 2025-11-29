@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../Common/Section";
-import CategoriesSlider from "../categories/CategoriesSlider";
+import CategoriesSlider from "./CategoriesSlider";
 
 const Categories = () => {
     return (
