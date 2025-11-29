@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../Common/Section'
 import FlashSalesSlider from '../Slider/FlashSalesSlider';
+import Button from '../Common/Button';
 
 const FlashSales = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -74,6 +75,15 @@ const FlashSales = () => {
           </div>
 
           <FlashSalesSlider />
+
+          <div className="flex justify-center pt-20 pb-16">
+            <Button 
+            text="View All Products"
+            />
+          </div>
+
+          <div className=' border border-gray-300 w-full'></div>
+
         </div>
       </div>
     </>

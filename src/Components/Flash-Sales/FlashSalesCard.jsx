@@ -13,6 +13,7 @@ const FlashSalesCard = ({
     solds
 }) => {
     return (
+        <>
         <div>
             <div className='w-[270px] h-[250px] bg-pink-100 items-center justify-center flex mt-20 relative rounded-lg group hover:transition-all duration-300 ease-in-out cursor-pointer'>
 
@@ -64,6 +65,10 @@ const FlashSalesCard = ({
                 </div>
             </div>
         </div>
+
+        <div>
+        </div>
+        </>
     )
 }
 

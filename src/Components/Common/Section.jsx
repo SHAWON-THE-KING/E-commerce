@@ -1,14 +1,26 @@
-import React from 'react'
+import React from "react";
 
-const Section = ({section}) => {
-    return (
-        <>
-            <div className='flex items-center gap-5'>
-                <div className='h-10 w-5 bg-orange-600 rounded-[5px]'></div>
-                <h1 className='text-orange-600 font-semibold'>{section}</h1>
-            </div>
-        </>
-    )
-}
+const Section = ({ section }) => {
+  return (
+    <>
+    <div className="container">
+      <div className="flex items-center gap-3 sm:gap-4">
+        {/* left bar */}
+        <div className="h-8 w-3 sm:h-9 sm:w-4 md:h-10 md:w-5 bg-orange-600 rounded-[5px]" />
 
-export default Section
+        {/* text */}
+        <h1
+          className="
+            text-xs sm:text-sm md:text-base lg:text-lg
+            text-orange-600 font-semibold
+          "
+        >
+          {section}
+        </h1>
+      </div>
+      </div>
+    </>
+  );
+};
+
+export default Section;
