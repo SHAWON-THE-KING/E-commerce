@@ -9,7 +9,7 @@ function Button({ text, className = "", onClick }) {
         sm:px-4 sm:py-2 sm:text-base
         md:px-12 md:py-2.5 md:text-lg
         rounded-md font-medium bg-orange-500 text-white
-        hover:bg-orange-600 transition-colors
+        hover:bg-orange-600 transition-colors hover:scale-105 duration-300 ease-in-out
         ${className}
       `}
     >

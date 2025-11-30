@@ -93,9 +93,9 @@ function CategoriesSlider() {
 
             {/* Mobile & Tablet Arrows (mid-bottom) */}
             <div
-                    className="
+                className="
                     absolute 
-                    -bottom-9 left-1/2 
+                    -bottom-15 left-1/2 
                     -translate-x-1/2
                     flex gap-3 items-center z-10
                     lg:hidden
@@ -109,7 +109,7 @@ function CategoriesSlider() {
 
 
             {/* Slider */}
-            <div className="slider-container">
+            <div className="slider-container categories-slider">
                 <Slider ref={sliderRef} {...settings}>
                     {[
                         { icon: <FiSmartphone size={32} />, label: "Phones" },
@@ -136,12 +136,13 @@ function CategoriesSlider() {
             </div>
 
             <style>{`
-                .slick-slide {
-                    display: flex !important;
-                    justify-content: center !important;
-                    align-items: center !important;
-                }
-            `}</style>
+  .categories-slider .slick-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+`}</style>
+
         </div>
     );
 }

@@ -6,6 +6,7 @@ import { IoStar } from "react-icons/io5";
 const FlashSalesCard = ({
     productImage,
     discountPercentage,
+    dishidden,
     productName,
     discountedPrice,
     originalPrice,
@@ -32,7 +33,7 @@ const FlashSalesCard = ({
                 </div>
 
                 {/* discount badge */}
-                <div className='py-1 px-3 bg-orange-500 rounded-[5px] text-center absolute top-5 left-3 hover:scale-110 duration-300'>
+                <div className={`${dishidden} py-1 px-3 bg-orange-500 rounded-[5px] text-center absolute top-5 left-3 hover:scale-110 duration-300`}>
                     <p className="text-white">
                         {discountPercentage}% OFF
                     </p>
