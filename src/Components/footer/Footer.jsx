@@ -5,7 +5,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import QrCode from "../../Assets/Qr-Code.png";
+import QrCode from "../../Assets/QrCode.png";
 import Playstore from "../../Assets/Playstore.png";
 import appstore from "../../Assets/appstore.png";
 
