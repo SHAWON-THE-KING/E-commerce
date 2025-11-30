@@ -1,8 +1,8 @@
 import React from "react";
 import SupportBox from "./SupportBox";
-import Services from "../../Assets/Services.png";
-import Services2 from "../../Assets/Services2.png";
-import Services3 from "../../Assets/Services3.png";
+import Services from "../../assets/Services.png";
+import Services2 from "../../assets/Services2.png";
+import Services3 from "../../assets/Services3.png";
 
 
 const SupportDetails = () => {
