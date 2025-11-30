@@ -1,2 +1,2 @@
 # LIVE LINK
-https://e-commerce-one-omega-43.vercel.app/
+https://e-commerce-phxd.vercel.app/
