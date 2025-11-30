@@ -6,7 +6,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import RootLayout from './RootLayout.jsx';
 import Contact from './Pages/Contact.jsx';
-import About from './Pages/About/About.jsx';
+import About from './Pages/about/About.jsx';
 import Login from './Pages/Login.jsx';
 import SignUp from './Pages/SignUp.jsx';
 import Error from './Pages/Error.jsx';
