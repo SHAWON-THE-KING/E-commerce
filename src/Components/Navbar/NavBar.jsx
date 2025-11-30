@@ -8,6 +8,10 @@ import { IoStarOutline, IoCartOutline } from "react-icons/io5";
 import { BiLogOut } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import { NavLink } from "react-router";
+import { Link } from "react-router-dom";
+
+
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -55,10 +59,10 @@ const NavBar = () => {
 
             {/* NAV LINKS (Desktop Only) */}
             <div className="hidden lg:flex gap-10 text-lg font-medium">
-              <a href="#" className="hover:underline underline-offset-5 duration-200">Home</a>
-              <a href="#" className="hover:underline underline-offset-5 duration-200">About</a>
-              <a href="#" className="hover:underline underline-offset-5 duration-200">Services</a>
-              <a href="#" className="hover:underline underline-offset-5 duration-200">Contact</a>
+              <NavLink to="/" className="hover:underline underline-offset-5 duration-200" end >Home</NavLink>
+              <NavLink to="/contact" className="hover:underline underline-offset-5 duration-200" end >Contact</NavLink>
+              <NavLink to="/about" className="hover:underline underline-offset-5 duration-200" end >About</NavLink>
+              <NavLink to="/sign-up" className="hover:underline underline-offset-5 duration-200" end >Sign Up</NavLink>
             </div>
 
             {/* SEARCH (Hidden on mobile) */}
@@ -109,18 +113,32 @@ const NavBar = () => {
                     </div>
 
                     <ul className="mt-3 space-y-1">
+                      <Link to="/Error">
+                        <li className="hover:bg-gray-700/40 p-2 rounded flex items-center cursor-pointer">
+                          <CiUser className="text-xl mr-2" /> My Profile
+                        </li>
+                      </Link>
+                      <Link to="/Error">
                       <li className="hover:bg-gray-700/40 p-2 rounded flex items-center cursor-pointer">
                         <MdLocalMall className="text-xl mr-2" /> My Orders
                       </li>
+                      </Link>
+
+                      <Link to="/Error">
                       <li className="hover:bg-gray-700/40 p-2 rounded flex items-center cursor-pointer">
                         <FaRegCircleXmark className="text-xl mr-2" /> My Cancellations
                       </li>
+                      </Link>
+                      <Link to="/Error">
                       <li className="hover:bg-gray-700/40 p-2 rounded flex items-center cursor-pointer">
                         <IoStarOutline className="text-xl mr-2" /> My Reviews
                       </li>
+                      </Link>
+                      <Link to="/Error">
                       <li className="hover:bg-gray-700/40 p-2 rounded flex items-center cursor-pointer text-red-400">
                         <BiLogOut className="text-xl mr-2" /> Logout
                       </li>
+                      </Link>
                     </ul>
                   </div>
                 )}
@@ -143,10 +161,10 @@ const NavBar = () => {
 
               {/* MOBILE NAV LINKS */}
               <div className="flex flex-col gap-3 font-medium text-lg">
-                <a href="#" className="hover:underline">Home</a>
-                <a href="#" className="hover:underline">About</a>
-                <a href="#" className="hover:underline">Services</a>
-                <a href="#" className="hover:underline">Contact</a>
+                <NavLink to="/" className="hover:underline underline-offset-5 duration-200" end >Home</NavLink>
+                <NavLink to="/contact" className="hover:underline underline-offset-5 duration-200" >Contact</NavLink>
+                <NavLink to="/about" className="hover:underline underline-offset-5 duration-200" >About</NavLink>
+                <NavLink to="/sign-up" className="hover:underline underline-offset-5 duration-200" >Sign Up</NavLink>
               </div>
 
               {/* MOBILE SEARCH */}

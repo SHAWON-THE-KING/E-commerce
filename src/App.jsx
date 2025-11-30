@@ -14,7 +14,6 @@ function App() {
 
   return (
     <>
-    <NavBar />
     <Banner />
     <FlashSales />
     <Categories />
@@ -23,7 +22,6 @@ function App() {
     <ExploreOurProducts />
     <NewArrival/>
     <SupportDetails/>
-    <Footer/>
     </>
   )
 }
