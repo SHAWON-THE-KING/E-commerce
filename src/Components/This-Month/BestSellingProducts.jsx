@@ -6,6 +6,8 @@ import coat from '../../assets/Gucci-coat.png';
 import bag from '../../assets/bag.png';
 import cooler from '../../assets/cooler.png';
 import bookself from '../../assets/bookself.png';
+import { Link } from "react-router-dom";
+
 
 const BestSellingProducts = () => {
   const products = [
@@ -24,7 +26,10 @@ const BestSellingProducts = () => {
           <h2 className="text-xl mt-4 sm:mt-7 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
             Best Selling Products
           </h2>
+
+          <Link to="/Products">
           <Button text="View All" />
+          </Link>
         </div>
 
         {/* Responsive + centered on small, 4 in a row on desktop */}

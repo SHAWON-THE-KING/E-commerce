@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Section from '../Common/Section'
 import FlashSalesSlider from '../Slider/FlashSalesSlider';
 import Button from '../Common/Button';
+import { Link } from "react-router-dom";
 
 const FlashSales = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -77,9 +78,16 @@ const FlashSales = () => {
           <FlashSalesSlider />
 
           <div className="flex justify-center pt-20 pb-16">
+
+<Link to="/Products">
+
             <Button 
             text="View All Products"
             />
+
+</Link>
+
+
           </div>
 
           <div className=' border border-gray-300 w-full'></div>

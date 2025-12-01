@@ -10,6 +10,7 @@ import About from './Pages/about/About.jsx';
 import Login from './Pages/Login.jsx';
 import SignUp from './Pages/SignUp.jsx';
 import Error from './Pages/Error.jsx';
+import Products from './Pages/Products.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "sign-up", Component: SignUp },
       { path: "Login", Component: Login },
       { path: "Error", Component: Error },
+      { path: "Products", Component: Products },
 
     ],
   },

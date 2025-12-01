@@ -6,6 +6,7 @@ import dogfood from '../../assets/dogfood.png'
 import Camera from '../../assets/Camera.png'
 import Laptop from '../../assets/Laptop.png'
 import curology from '../../assets/curology.png'
+import { Link } from "react-router-dom";
 
 const ExploreOurProducts = () => {
     return (
@@ -124,7 +125,11 @@ const ExploreOurProducts = () => {
 
                 </div>
 
+                <Link to="/Products">
+                
                      <Button text="View All Products" className="mt-20 mx-auto block" />
+                
+                 </Link>
 
             </div>
         </div>
